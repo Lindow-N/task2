@@ -1,25 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import React from 'react';
+const { Remarkable } = require('remarkable');
+var md = new Remarkable();
+
+    class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.md = new Remarkable();
+    this.handleChange = this.handleChange.bind(this);
+    this.state = { value: 'Bonjour, **monde** !' };
+  }
+   
+
+  handleChange(e) {
+    this.setState({ value: e.target.value });
+  }
+
+  getRawMarkup() {
+    return { __html: this.md.render(this.state.value) };
+  }
+
+  render() {
+    return (
+<>
+      <div className="header"><h1>Saisissez du markdown !</h1></div>
+
+      <div className="body">
+      <div className="MarkdownEditor">
+
+        <div className="block1">
+
+        <div className="p1"><h3>Entrée</h3></div>
+
+        <div className="text">
+        <textarea
+          id="markdown-content"
+          onChange={this.handleChange}
+          defaultValue={this.state.value}
+        />
+        </div>
+        </div>
+
+
+        <div className="block2">
+          
+        <div className="p1"><h3>Sortie</h3></div>
+        
+        <div className="text">
+        <div
+          className="content"
+          dangerouslySetInnerHTML={this.getRawMarkup()}
+        />
+        </div>
+      </div>
+      </div>
+      </div>
+
+      </>
+    );
+  }
 }
 
 export default App;
