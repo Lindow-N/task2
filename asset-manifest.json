@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/task2/static/css/main.10c4e6c8.css",
+    "main.css": "/task2/static/css/main.cfb20551.css",
     "main.js": "/task2/static/js/main.04843b1a.js",
+    "static/media/pattern_brick-wall-2_1_3_0-0_0_1__142e43_ffac4d_ff6181 (1).png": "/task2/static/media/pattern_brick-wall-2_1_3_0-0_0_1__142e43_ffac4d_ff6181 (1).d17be8317979a40ff86e.png",
     "index.html": "/task2/index.html",
-    "main.10c4e6c8.css.map": "/task2/static/css/main.10c4e6c8.css.map",
+    "main.cfb20551.css.map": "/task2/static/css/main.cfb20551.css.map",
     "main.04843b1a.js.map": "/task2/static/js/main.04843b1a.js.map"
   },
   "entrypoints": [
-    "static/css/main.10c4e6c8.css",
+    "static/css/main.cfb20551.css",
     "static/js/main.04843b1a.js"
   ]
 }
